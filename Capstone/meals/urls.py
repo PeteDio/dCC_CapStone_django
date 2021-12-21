@@ -5,6 +5,6 @@ from meals import views
 
 urlpatterns = [
     path('all/', views.get_all_meals),
-    path('', views.user_meals),
+    path('user', views.user_meals),
 
 ]

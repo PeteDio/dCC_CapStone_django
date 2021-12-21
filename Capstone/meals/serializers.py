@@ -4,4 +4,4 @@ from .models import Meal
 class MealSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meal
-        fields =['id', 'likes','recipe','datetime','caption']
+        fields =['id', 'likes','recipe','date','caption']

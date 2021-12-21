@@ -8,5 +8,5 @@ class Meal(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.IntegerField()
     recipe = models.CharField(max_length=45)
-    datetime = models.DateTimeField()
+    date = models.DateField()
     caption = models.CharField(max_length=300)
