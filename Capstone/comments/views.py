@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Comments
+from .models import Comment
 from .serializers import CommentsSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -13,7 +13,7 @@ from django.http import Http404
 class CommentsList(APIView):
 
     def get(self, request):
-        comments = Comments.objects.all()
+        comments = Comment.objects.all()
         serializer = CommentsSerializer(comments, many=True)
         return Response(serializer.data)
 
@@ -31,8 +31,8 @@ class CommentsDetail(APIView):
 
     def get_object(self, pk):
         try:
-            return Comments.objects.get(pk=pk)
-        except Comments.DoesNotExist:
+            return Comment.objects.get(pk=pk)
+        except Comment.DoesNotExist:
             raise Http404
 
     # get by id

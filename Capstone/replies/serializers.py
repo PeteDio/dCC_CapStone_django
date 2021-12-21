@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Replies
+from .models import Reply
 
 
 class RepliesSerializer (serializers.ModelSerializer):
     class Meta:
-        model = Replies
+        model = Reply
         fields = ['comments_id', 'comments', 'text','userId']

@@ -1,4 +1,4 @@
-"""drf_jwt_capstone_backend URL Configuration
+"""capstone URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -20,6 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/meals/', include('meals.urls')),
+    path('api/comments/', include('comments.urls')),
+    path('api/replies/', include('replies.urls')),
 
 
 ]
