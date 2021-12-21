@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
     'meals',
+    'comments',
+    'replies',
 
 ]
 

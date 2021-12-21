@@ -1,12 +1,10 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
 User = get_user_model()
 
 # Create your models here.
-class Meal(models.Model):
+class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    likes = models.IntegerField()
-    recipe = models.CharField(max_length=45)
+    mealId = models.ForeignKey('meals.Meal', on_delete=models.CASCADE)
     datetime = models.DateTimeField()
-    caption = models.CharField(max_length=300)
+    comment = models.CharField(max_length=300)
