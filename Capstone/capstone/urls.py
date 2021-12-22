@@ -22,6 +22,7 @@ urlpatterns = [
     path('api/meals/', include('meals.urls')),
     path('api/comments/', include('comments.urls')),
     path('api/replies/', include('replies.urls')),
+    path('api/favmeals/', include('favmeals.urls')),
 
 
 ]

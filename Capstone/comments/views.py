@@ -41,6 +41,9 @@ class CommentsDetail(APIView):
         serializer = CommentsSerializer(comment)
         return Response(serializer.data)
 
+
+  
+
     # update
     def put(self, request, pk):
         permission_classes = [IsAuthenticated]
@@ -60,3 +63,21 @@ class CommentsDetail(APIView):
             comments.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+class CommentsByMealId(APIView):
+
+
+    def get_objects_by_post_id(self, post):
+        try:
+            return Comment.objects.filter(post = post)
+        except Comment.DoesNotExist:
+            raise Http404
+
+
+    def get(self, request, post):
+
+        permission_classes = [IsAuthenticated]
+        if permission_classes == [IsAuthenticated]:
+            comments = self.get_objects_by_post_id(post)
+            serializer = CommentsSerializer(comments, many=True)
+            return Response(serializer.data)
+        

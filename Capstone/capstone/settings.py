@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$-*c5gei%cikbqw&1eqj$7_%c3npk^^7xp#_x(8oc$zy(j3wus
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'meals',
     'comments',
     'replies',
+    'favmeals'
 
 ]
 
